@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS `tblmypets_breeds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `breed_name` varchar(100) NOT NULL,
+  `animal_type` enum('Dog','Cat','Horse','Rabbit','Bird') NOT NULL,
+  `breed_group` varchar(50) DEFAULT NULL,
+  `size` enum('Toy','Small','Medium','Large','Giant') DEFAULT NULL,
+  `temperament` text DEFAULT NULL,
+  `life_span` varchar(20) DEFAULT NULL,
+  `weight_range` varchar(30) DEFAULT NULL,
+  `height_range` varchar(30) DEFAULT NULL,
+  `coat_type` varchar(50) DEFAULT NULL,
+  `exercise_needs` enum('Low','Moderate','High','Very High') DEFAULT NULL,
+  `grooming_needs` enum('Low','Moderate','High','Very High') DEFAULT NULL,
+  `good_with_children` tinyint(1) DEFAULT 1,
+  `good_with_pets` tinyint(1) DEFAULT 1,
+  `origin_country` varchar(50) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `animal_type` (`animal_type`),
+  KEY `breed_group` (`breed_group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
